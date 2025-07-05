@@ -3,11 +3,24 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    
+    <!-- ✅ Prevent dark-mode flash (theme applied before paint) -->
+    <script>
+      (() => {
+        const theme = localStorage.getItem('theme');
+        if (theme === 'dark') {
+          document.documentElement.classList.add('dark');
+        }
+      })();
+    </script>
+
+    <!-- ✅ Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?display=swap&family=Noto+Sans:wght@400;500;700;900&family=Spline+Sans:wght@400;500;700"
     />
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>VoucherVerse - Buy, Sell & Exchange Gift Vouchers</title>
   </head>
